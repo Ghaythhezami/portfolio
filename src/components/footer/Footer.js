@@ -6,7 +6,7 @@ const Footer = () => {
   // Function to handle the resume download
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/assets/english-resume.pdf'; // Replace with your actual resume path
+    link.href = './assets/english-resume.pdf'; // Replace with your actual resume path
     link.download = 'Resume-of-Ghazi-Lassoud.pdf'; // The downloaded file will be named "Resume-of-Ghayth-Khezami.pdf"
     link.click();
   };
