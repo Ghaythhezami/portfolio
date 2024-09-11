@@ -1,28 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import { HiArrowRight } from "react-icons/hi";
 
-const Card = ({ item: { title, des, icon, photos, languages } }) => {
-  // State to handle carousel effect
-  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+const Card = ({ item: { title, des, icon, photos } }) => {
+  const [showFirstPhoto, setShowFirstPhoto] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    if (title === "Pitching" && photos && photos.length > 1) {
-      const intervalId = setInterval(() => {
-        setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photos.length);
-      }, 2500); // 2.5 seconds
+    let intervalId;
 
-      return () => clearInterval(intervalId);
+    // Start toggling when hovered for both "Pitching" and "Data Analysis" sections
+    if (isHovered && (title === "Pitching" || title === "Data Analysis") && photos && photos.length > 1) {
+      intervalId = setInterval(() => {
+        setShowFirstPhoto((prev) => !prev); // Toggle between showing t1 and t2
+      }, 2000); // Toggle every 2 seconds
     }
-  }, [title, photos]);
+
+    // Clear interval on hover end or component unmount
+    return () => clearInterval(intervalId);
+  }, [isHovered, title, photos]);
 
   return (
-    <div className="relative w-full px-12 h-auto py-10 rounded-lg shadow-shadowOne flex flex-col items-center bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-white transition-colors duration-300 ease-in-out">
+    <div
+      className="relative w-[500px] h-[500px] px-6 py-6 rounded-lg shadow-shadowOne flex flex-col items-center bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-white transition-colors duration-300 ease-in-out"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setShowFirstPhoto(true); // Reset to show the first photo when hover ends
+      }}
+    >
       <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out rounded-lg"></div>
-      <div className="relative z-10 h-auto overflow-y-hidden">
-        <div className="flex flex-col gap-10 translate-y-16 group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
-          <div className="w-10 h-20 flex flex-col justify-between">
+      <div className="relative z-10 h-full w-full overflow-hidden">
+        <div className="flex flex-col gap-6 h-full w-full translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+          <div className="w-12 h-12 flex flex-col justify-between">
             {icon ? (
-              <span className="text-5xl text-designColor">{icon}</span>
+              <span className="text-4xl text-designColor">{icon}</span>
             ) : (
               <>
                 <span className="w-full h-[2px] rounded-lg bg-designColor inline-flex"></span>
@@ -32,62 +43,45 @@ const Card = ({ item: { title, des, icon, photos, languages } }) => {
               </>
             )}
           </div>
-          <div className="flex flex-col gap-6">
-            <h2 className="text-xl md:text-2xl font-titleFont font-bold text-gray-300 group-hover:text-black transition-colors duration-300 ease-in-out">
+          <div className="flex flex-col gap-4 h-full w-full">
+            <h2 className="text-2xl md:text-3xl font-titleFont font-bold text-gray-300 group-hover:text-black transition-colors duration-300 ease-in-out">
               {title}
             </h2>
             <p className="base group-hover:hidden transition-opacity duration-300 ease-in-out">{des}</p>
             {photos && (
-              <div className="flex flex-wrap justify-center gap-4 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                {title === "Deployment" || title === "Pitching" ? (
+              <div className="flex flex-wrap justify-center gap-4 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out w-full h-full relative flex items-center justify-center">
+                {title === "Deployment" ? (
                   photos.map((photo, index) => (
-                    <img
-                      key={index}
-                      src={photo}
-                      alt={`${title.toLowerCase()} logo ${index + 1}`}
-                      className="w-20 h-20 object-contain" // Adjust size as needed
-                    />
-                  ))
-                ) : (
-                  <>
-                    <h3 className="text-lg font-bold text-gray-600 group-hover:text-black">
-                      {title === "Web Development" || title === "Mobile Development" ? "Frameworks Used:" : "Technologies Used:"}
-                    </h3>
-                    {photos.map((photo, index) => (
+                    <div key={index} className="relative w-[400px] h-[300px] overflow-hidden rounded-lg">
                       <img
-                        key={index}
                         src={photo}
-                        alt={`technology logo ${index + 1}`}
-                        className="w-16 h-16 object-contain"
+                        alt={`${title.toLowerCase()} logo ${index + 1}`}
+                        className="w-full h-full object-cover rounded-lg"
                       />
-                    ))}
-                  </>
-                )}
-                {title === "Pitching" && photos && photos.length > 1 && (
-                  <div className="relative">
+                    </div>
+                  ))
+                ) : (title === "Pitching" || title === "Data Analysis") && photos.length > 1 ? (
+                  <div className="relative w-[400px] h-[300px] overflow-hidden rounded-lg">
                     <img
-                      src={photos[currentPhotoIndex]}
-                      alt={`pitching photo ${currentPhotoIndex + 1}`}
-                      className="w-72 h-72 object-cover rounded-lg"
+                      src={showFirstPhoto ? photos[0] : photos[1]} // Toggle between t1 and t2
+                      alt={`${title.toLowerCase()} ${showFirstPhoto ? "photo 1" : "photo 2"}`}
+                      className="w-full h-full object-cover rounded-lg transition-opacity duration-500 ease-in-out"
                     />
                   </div>
+                ) : (
+                  photos.map((photo, index) => (
+                    <div key={index} className="relative w-[400px] h-[300px] overflow-hidden rounded-lg">
+                      <img
+                        src={photo}
+                        alt={`technology logo ${index + 1}`}
+                        className="w-full h-full object-cover rounded-lg"
+                      />
+                    </div>
+                  ))
                 )}
               </div>
             )}
-            {languages && languages.length > 0 && (
-              <div className="flex flex-wrap justify-center gap-4 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
-                <h3 className="text-lg font-bold text-gray-600 group-hover:text-black">Programming Languages:</h3>
-                {languages.map((logo, index) => (
-                  <img
-                    key={index}
-                    src={logo}
-                    alt={`language logo ${index + 1}`}
-                    className="w-16 h-16 object-contain"
-                  />
-                ))}
-              </div>
-            )}
-            <span className="text-2xl text-designColor mt-4 group-hover:text-black transition-colors duration-300 ease-in-out">
+            <span className="text-xl text-designColor mt-4 group-hover:text-black transition-colors duration-300 ease-in-out">
               <HiArrowRight />
             </span>
           </div>

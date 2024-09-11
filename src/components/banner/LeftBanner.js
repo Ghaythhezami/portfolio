@@ -4,7 +4,7 @@ import Media from './Media';
 
 const LeftBanner = () => {
     const [text] = useTypewriter({
-      words: ["Professional Coder.", "Full Stack Developer."],
+      words: ["Data Analyst.", "Data Analyst."],
       loop: true,
       typeSpeed: 20,
       deleteSpeed: 10,
@@ -13,9 +13,9 @@ const LeftBanner = () => {
   return (
     <div className="w-full lgl:w-1/2 flex flex-col gap-20">
       <div className="flex flex-col gap-5">
-        <h4 className=" text-lg font-normal">WELCOME TO MY WORLD</h4>
+        <h4 className=" text-lg font-normal">WELCOME TO MY Portfolio</h4>
         <h1 className="text-6xl font-bold text-white">
-          Hi, I'm <span className="text-designColor capitalize">Ghayth Khezami</span>
+          Hi, I'm <span className="text-designColor capitalize">Ghazi Lassoued</span>
         </h1>
         <h2 className="text-4xl font-bold text-white">
           a <span>{text}</span>
@@ -26,13 +26,11 @@ const LeftBanner = () => {
           />
         </h2>
         <p className="text-base font-bodyFont leading-6 tracking-wide">
-          Recently graduated with a degree in Software Engineering and Information Systems, I have a strong
-passion for entrepreneurship and developing innovative solutions to address contemporary
-technological challenges. My academic background has equipped me with a solid foundation in
-software development, system analysis, problem-solving skills, and cloud computing. I am eager to
-further my expertise by pursuing advanced studies in Data Science Engineering, where I aim to leverage
-my knowledge to drive data-driven decision-making and create impactful technological advancements.
+        I am a final-year Business Administration student at Tunis Business School, deeply captivated by the world of Data Science. My academic journey in Business Analytics and Information Technology has ignited a passion for uncovering the stories hidden within data.
 
+To further fuel this passion, I embarked on an intensive Data Science bootcamp that was like unlocking a new realm of possibilities. This hands-on experience allowed me to delve into real-world projects, transforming raw data into actionable insights and innovative solutions.
+
+Driven by curiosity and a desire to excel, I’ve continued to expand my expertise through additional certifications and self-learning. My blend of formal education, practical experience, and continuous exploration has prepared me to tackle complex data challenges and make a meaningful impact in the dynamic field of Data Science.
         </p>
       </div>
      {/* Media */}

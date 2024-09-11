@@ -11,34 +11,33 @@ const ContactLeft = () => {
         alt="contactImg"
       />
       <div className="flex flex-col gap-4">
-        <h3 className="text-3xl font-bold text-white">Ghayth Khezami</h3>
+        <h3 className="text-3xl font-bold text-white">Ghazi Lassoued </h3>
         <p className="text-lg font-normal text-gray-400">
-          Full Stack Developer
-        </p>
+        Data and Business Analyst        </p>
         <p className="text-base text-gray-400 tracking-wide">
           Contact me :
         </p>
         <p className="text-base text-gray-400 flex items-center gap-2">
-          Phone: <span className="text-lightText">+216 95988826</span>
+          Phone: <span className="text-lightText">+216 95292668</span>
         </p>
         <p className="text-base text-gray-400 flex items-center gap-2">
-          Email: <span className="text-lightText">ghaythkhezami@gmail.com</span>
+          Email: <span className="text-lightText">lassouedghazi21@gmail.com</span>
         </p>
       </div>
       <div className="flex flex-col gap-4">
         <h2 className="text-base uppercase font-titleFont mb-4">Find me in</h2>
         <div className="flex gap-4">
-          <a href="mailto:ghaythkhezami@gmail.com" target="_blank" rel="noopener noreferrer">
+          <a href="mailto:lassouedghazi21@gmail.com" target="_blank" rel="noopener noreferrer">
             <span className="bannerIcon">
               <FaEnvelope />
             </span>
           </a>
-          <a href="https://github.com/Ghaythhezami" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/lassouedghazi" target="_blank" rel="noopener noreferrer">
             <span className="bannerIcon">
               <FaGithub />
             </span>
           </a>
-          <a href="https://www.linkedin.com/in/ghayth-khezami-bb6b27176/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/ghazi-lassoued-983419239/" target="_blank" rel="noopener noreferrer">
             <span className="bannerIcon">
               <FaLinkedinIn />
             </span>

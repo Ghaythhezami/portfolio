@@ -1,4 +1,4 @@
-import { FaMobile, FaServer, FaCode, FaCheckCircle, FaProjectDiagram, FaBullhorn } from "react-icons/fa";
+import { FaBullhorn, FaChartLine, FaChartPie, FaTachometerAlt } from "react-icons/fa";
 import angularLogo from "../assets/images/angular.png";
 import reactLogo from "../assets/images/react.png";
 import nodejsLogo from "../assets/images/nodejs.png";
@@ -13,7 +13,6 @@ import tsLogo from "../assets/images/typescript.png";
 import pythonLogo from "../assets/images/python.png";
 import phpLogo from "../assets/images/php.png";
 import SonarQube from "../assets/images/SonarQube.png"; 
-import figmaLogo from "../assets/images/figma.png";
 
 import flutterLogo from "../assets/images/flutter.png"; 
 import dartLogo from "../assets/images/dart.png";     
@@ -22,57 +21,44 @@ import apiGatewayLogo from "../assets/images/api-gateway.png";
 import lambdaLogo from "../assets/images/lambda.png";
 import terraformLogo from "../assets/images/terraform.png";
 import dockerLogo from "../assets/images/docker.png";
-import ghayth1 from "../assets/images/ghayth1.jpeg";
-import ghayth2 from "../assets/images/ghayth2.jpeg";
+import dash from "../assets/images/dash.jpg";
+import ba from "../assets/images/ba.jpg";
+import t1 from "../assets/images/t1.jpg";
+import t2 from "../assets/images/t2.jpg";
+
 
 // Features Data
 export const featuresData = [
   {
     id: 1,
-    icon: <FaCode />, // Icon for Web Development
-    title: "Web Development",
-    des: "Building responsive and interactive websites using modern web technologies and frameworks.",
-    photos: [angularLogo, reactLogo, nodejsLogo, expressLogo, laravelLogo],
-    languages: [htmlLogo, cssLogo, javaLogo, jsLogo, tsLogo, pythonLogo, phpLogo],
+    icon: <FaChartLine /> , // Icon for Web Development
+    title: "Data Analysis",
+    des: "As a data analyst, I excel in conducting comprehensive analyses across diverse datasets and fields. My responsibilities encompass the entire data lifecycle, including data gathering, cleaning, and preprocessing. I perform exploratory data analysis and create detailed visualizations to uncover patterns and insights. Additionally, I specialize in feature engineering, model building, and implementing machine learning algorithms. I ensure robust model validation and manage model deployment to production environments. My goal is to transform raw data into actionable insights that drive informed decision-making.",
+    photos: [t1,t2], 
+
   },
   {
     id: 2,
-    icon: <FaMobile />, // Icon for Mobile Development
-    title: "Mobile Development",
-    des: "Creating mobile applications for Android platforms with a focus on performance and user experience.",
-    photos: [flutterLogo], // Framework: Flutter
-    languages: [dartLogo], // Programming Language: Dart
+    icon: <FaChartPie />, // Icon for Mobile Development
+    title: "Business Analysis",
+    des: "As a business analyst, I identify business needs and provide solutions by analyzing data, conducting market research, and gathering requirements through stakeholder interviews. I create detailed documentation and collaborate with cross-functional teams to ensure clarity and alignment. Using SWOT analysis, gap analysis, and cost-benefit analysis, I aid organizations in making informed decisions, optimizing processes, and achieving strategic goals.",
+    photos: [ba], 
+
   },
 {
   id: 3,
-  icon: <FaServer />, // Icon for Deployment
-  title: "Deployment",
-  des: "Deploying applications to cloud and on-premise servers, ensuring scalability, security, and uptime.",
-  photos: [awsS3Logo, apiGatewayLogo, lambdaLogo, terraformLogo, dockerLogo], // Add logos for deployment tools
+  icon: <FaTachometerAlt />, // Icon for Deployment
+  title: "Dashboarding",
+  des: "In my role, I create interactive dashboards that consolidate key metrics and data insights using tools like Tableau, Power BI, and Excel. I integrate data from multiple sources and employ visualizations such as charts and gauges to highlight trends and performance. My deep understanding of each chart and its implications enables me to present and explain findings clearly and effectively. I articulate the significance of various visualizations, ensuring stakeholders grasp the insights and their relevance to strategic decision-making. This approach facilitates real-time monitoring, goal tracking, and data-driven planning.",
+  photos: [dash], // Add logos for deployment tools
 },
 
   {
     id: 4,
-    icon: <FaCheckCircle />, // Icon for Unit Testing
-    title: "Unit Testing",
-    des: "Writing and running tests to ensure code reliability and performance through automated testing frameworks.",
-    photos: [SonarQube], // Add logos for deployment tools
-    
-  },
-  {
-    id: 5,
-    icon: <FaProjectDiagram />, // Icon for Project Development
-    title: "UX/UI Design",
-    des: "Creating visually appealing and user-friendly interfaces that enhance the overall experience and usability of a product or service.",
-    photos: [figmaLogo], // Add logos for deployment tools
-
-  },
-  {
-    id: 6,
-    icon: <FaBullhorn />, // Icon for Pitching
+    icon: <FaBullhorn />, // Icon for Unit Testing
     title: "Pitching",
-    des: "Effectively communicating ideas, products, and project concepts to stakeholders and clients.",
-    photos: [ghayth1, ghayth2], 
+    des: "I have honed my pitching and debating skills through my active involvement with TIMUN TBS, where I participated in numerous simulations and debating scenarios. This experience sharpened my ability to articulate and defend positions effectively, enhancing my persuasive communication. Additionally, as a member of the Sponsoring and Treasury Department, I engaged in various workshops and training sessions focused on securing sponsorships and raising funds. These activities refined my skills in leveraging persuasive techniques to attract sponsors and garner financial support. This blend of practical experience in debating and strategic pitching has equipped me with a compelling ability to present ideas and drive impactful outcomes.",
+    
   }
   ,
 ];

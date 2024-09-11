@@ -47,9 +47,7 @@ const Navbar = () => {
               <div>
                 <img className="w-32" src={logo} alt="logo" />
                 <p className="text-sm text-gray-400 mt-2">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Earum soluta perspiciatis molestias enim cum repellat, magnam
-                  exercitationem distinctio aliquid nam.
+                  
                 </p>
               </div>
               <ul className="flex flex-col gap-4">
@@ -78,7 +76,7 @@ const Navbar = () => {
                 </h2>
                 <div className="flex gap-4">
                   <a
-                    href="mailto:ghaythkhezami2002@gmail.com"
+                    href="mailto:lassouedghazi21@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bannerIcon"
@@ -86,7 +84,7 @@ const Navbar = () => {
                     <AiOutlineMail />
                   </a>
                   <a
-                    href="https://github.com/Ghaythhezami"
+                    href="https://github.com/lassouedghazi"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bannerIcon"
